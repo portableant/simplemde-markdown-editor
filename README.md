@@ -19,9 +19,9 @@ WYSIWYG editors that produce HTML are often complex and buggy. Markdown solves t
 
 ## Install
 
-Via [npm](https://www.npmjs.com/package/simplemde).
+Via [npm](https://www.npmjs.com/package/simplemde-extended).
 ```
-npm install simplemde-plus --save
+npm install simplemde-extended --save
 ```
 
 ```HTML
