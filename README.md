@@ -1,3 +1,12 @@
+# Improved SimpleMDE - Markdown Editor
+
+NOTE: this is a fork => https://www.npmjs.com/package/simplemde
+
+## Feature Updates
+	- Update build process using webpack
+	- Update Spellchecking facilities
+
+
 # SimpleMDE - Markdown Editor
 A drop-in JavaScript textarea replacement for writing beautiful and understandable Markdown. The WYSIWYG-esque editor allows users who may be less experienced with Markdown to use familiar toolbar buttons and shortcuts. In addition, the syntax is rendered while editing to clearly show the expected result. Headings are larger, emphasized words are italicized, links are underlined, etc. SimpleMDE is one of the first editors to feature both built-in autosaving and spell checking.
 
@@ -12,15 +21,8 @@ WYSIWYG editors that produce HTML are often complex and buggy. Markdown solves t
 
 Via [npm](https://www.npmjs.com/package/simplemde).
 ```
-npm install simplemde --save
+npm install simplemde-plus --save
 ```
-
-Via [bower](https://www.bower.io).
-```
-bower install simplemde --save
-```
-
-Via [jsDelivr](https://www.jsdelivr.com/#!simplemde). *Please note, jsDelivr may take a few days to update to the latest release.*
 
 ```HTML
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
@@ -100,7 +102,7 @@ simplemde.value("This text will appear in the editor");
   - **codeSyntaxHighlighting**: If set to `true`, will highlight using [highlight.js](https://github.com/isagalaev/highlight.js). Defaults to `false`. To use this feature you must include highlight.js on your page. For example, include the script and the CSS files like:<br>`<script src="https://cdn.jsdelivr.net/highlight.js/latest/highlight.min.js"></script>`<br>`<link rel="stylesheet" href="https://cdn.jsdelivr.net/highlight.js/latest/styles/github.min.css">`
 - **shortcuts**: Keyboard shortcuts associated with this instance. Defaults to the [array of shortcuts](#keyboard-shortcuts).
 - **showIcons**: An array of icon names to show. Can be used to show specific icons hidden by default without completely customizing the toolbar.
-- **spellChecker**: If set to `false`, disable the spell checker. Defaults to `true`.
+- **spellChecker**: Object. If enable set to `false`, disable the spell checker. Defaults to `enable = true`. Locale information and urls to dictionary resources are also set here.  See example below.
 - **status**: If set to `false`, hide the status bar. Defaults to the array of built-in status bar items.
   - Optionally, you can set an array of status bar items to include, and in what order. You can even define your own custom status bar items.
 - **styleSelectedText**: If set to `false`, remove the `CodeMirror-selectedtext` class from selected lines. Defaults to `true`.
@@ -158,7 +160,12 @@ var simplemde = new SimpleMDE({
 		drawTable: "Cmd-Alt-T"
 	},
 	showIcons: ["code", "table"],
-	spellChecker: false,
+	spellChecker: {
+        enabled: true,
+        locale: 'en_GB,
+        aff_url: `url_to_en_GB.aff`,
+        dic_url: `url_to_en_GB.dic`
+	},
 	status: false,
 	status: ["autosave", "lines", "words", "cursor"], // Optional usage
 	status: ["autosave", "lines", "words", "cursor", {
