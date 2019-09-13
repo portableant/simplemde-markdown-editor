@@ -26,7 +26,7 @@
   },
   "dependencies": {
     "codemirror": "*",
-    "codemirror-spell-checker": "*",
+    "codemirror-spell-checker": "https://github.com/pete-wildberger/codemirror-spell-checker/tarball/master",
     "marked": "*"
   },
   "devDependencies": {
