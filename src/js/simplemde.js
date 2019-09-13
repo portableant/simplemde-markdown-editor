@@ -1473,7 +1473,8 @@ SimpleMDE.prototype.render = function(el) {
 		CodeMirrorSpellChecker({
 			codeMirrorInstance: CodeMirror,
 			aff: `http://localhost:4200/${options.locale}.aff`,
-			dic: `http://localhost:4200/${options.locale}.dic`
+			dic: `http://localhost:4200/${options.locale}.dic`,
+			locale: options.locale
 		});
 	} else {
 		mode = options.parsingConfig;
