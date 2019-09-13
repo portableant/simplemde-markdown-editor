@@ -9,6 +9,10 @@
     "javascript",
     "wysiwyg"
   ],
+  "scripts": {
+    "build-dev": "webpack --config-name dev",
+    "build-prod": "webpack --config-name prod"
+  },
   "homepage": "https://github.com/NextStepWebs/simplemde-markdown-editor",
   "main": "./src/js/simplemde.js",
   "license": "MIT",
@@ -26,20 +30,12 @@
     "marked": "*"
   },
   "devDependencies": {
-    "browserify": "*",
-    "debug": "*",
-    "eslint": "*",
-    "gulp": "*",
-    "gulp-concat": "*",
-    "gulp-debug": "*",
-    "gulp-eslint": "*",
-    "gulp-header": "*",
-    "gulp-jsbeautifier": "*",
-    "gulp-clean-css": "*",
-    "gulp-rename": "*",
-    "gulp-uglify": "*",
-    "vinyl-source-stream": "*",
-    "vinyl-buffer": "*"
+    "css-loader": "^3.2.0",
+    "mini-css-extract-plugin": "^0.8.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "terser-webpack-plugin": "^2.0.1",
+    "webpack": "^4.40.0",
+    "webpack-cli": "^3.3.8"
   },
   "repository": {
     "type": "git",
