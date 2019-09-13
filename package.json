@@ -10,8 +10,8 @@
     "wysiwyg"
   ],
   "scripts": {
-    "build-dev": "webpack --config-name dev",
-    "build-prod": "webpack --config-name prod"
+    "build:dev": "webpack --config-name dev",
+    "build:prod": "webpack --config-name prod"
   },
   "homepage": "https://github.com/NextStepWebs/simplemde-markdown-editor",
   "main": "./src/js/simplemde.js",
