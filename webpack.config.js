@@ -12,7 +12,7 @@ module.exports = [
                 path.resolve(__dirname, './src/js/simplemde.js'),
                 path.resolve(__dirname, './node_modules/codemirror/lib/codemirror.css'),
                 path.resolve(__dirname, './src/css/simplemde.css'),
-                path.resolve(__dirname, './node_modules/codemirror-spell-checker/src/css/spell-checker.css')
+                path.resolve(__dirname, './node_modules/codemirror-spell-checker-extended/src/css/spell-checker.css')
             ]
         },
         output: {
