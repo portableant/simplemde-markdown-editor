@@ -1464,7 +1464,7 @@ SimpleMDE.prototype.render = function(el) {
 	}, false);
 
 	var mode, backdrop;
-	if(options.spellChecker !== false) {
+	if(options.spellChecker.enabled !== false) {
 		mode = "spell-checker";
 		backdrop = options.parsingConfig;
 		backdrop.name = "gfm";
@@ -1472,9 +1472,9 @@ SimpleMDE.prototype.render = function(el) {
 
 		CodeMirrorSpellChecker({
 			codeMirrorInstance: CodeMirror,
-			aff: `http://localhost:4200/${options.locale}.aff`,
-			dic: `http://localhost:4200/${options.locale}.dic`,
-			locale: options.locale
+			aff: options.spellChecker.aff_url,
+			dic: options.spellChecker.dic_url,
+			locale: options.spellChecker.locale
 		});
 	} else {
 		mode = options.parsingConfig;
