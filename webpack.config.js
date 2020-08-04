@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const path = require('path');
 const TerserJSPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -41,7 +42,7 @@ module.exports = [
                 path.resolve(__dirname, './src/js/simplemde.js'),
                 path.resolve(__dirname, './node_modules/codemirror/lib/codemirror.css'),
                 path.resolve(__dirname, './src/css/simplemde.css'),
-                path.resolve(__dirname, './node_modules/codemirror-spell-checker/src/css/spell-checker.css')
+                path.resolve(__dirname, './node_modules/codemirror-spell-checker-extended/src/css/spell-checker.css')
             ]
         },
         output: {
@@ -52,6 +53,9 @@ module.exports = [
             new MiniCssExtractPlugin({
                 filename: '[name].min.css',
             }),
+            new webpack.optimize.LimitChunkCountPlugin({
+                maxChunks: 1
+              })
         ],
         module: {
             rules: [
@@ -62,7 +66,24 @@ module.exports = [
             ],
         },
         optimization: {
-            minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
+            minimizer: [
+                new TerserJSPlugin({
+                    parallel: true,
+                    terserOptions: {
+                        ecma: 6,
+                        compress: {
+                            drop_console: true
+                        }
+                    }
+                }),
+                new OptimizeCSSAssetsPlugin({
+                    cssProcessorPluginOptions: {
+                        preset: ['default', { discardComments: { removeAll: true } }]
+                    },
+                    canPrint: true
+                })
+            ],
+			usedExports: true
         }
     }
 ];

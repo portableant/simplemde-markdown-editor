@@ -1,6 +1,6 @@
 {
   "name": "simplemde-extended",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A simple, beautiful, and embeddable JavaScript Markdown editor. Features autosaving and spell checking.",
   "keywords": [
     "embeddable",
@@ -27,7 +27,7 @@
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "terser-webpack-plugin": "^2.0.1",
     "webpack": "^4.40.0",
-    "webpack-cli": "^3.3.8"
+    "webpack-cli": "^3.3.12"
   },
   "repository": {
     "type": "git",
